@@ -22,7 +22,8 @@ const UserSchema = new mongoose.Schema({
     Department:{
         type:String,
         required:true,
-        min:30,
+        min:2,
+        max:5,
     },
     password:{
         type:String,
@@ -33,8 +34,14 @@ const UserSchema = new mongoose.Schema({
         type:String,
         default:"",
     },
-    year:Number,
-
+    year:{
+        type:Number,
+        required:true,
+    },
+    subjects:{
+        type:Array,
+        default:[],
+    }
 });
 
 const User = mongoose.model("User",UserSchema);
