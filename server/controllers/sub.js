@@ -28,3 +28,19 @@ export const createSubject = async (req,res)=>{
     }
 };
 
+export const addRemoveNote = async (req,res)=>{
+    try{
+        const {id,subjectId} = req.params
+        const user = await Users.findById(id);
+        const note = await Subject.findById(noteId);
+        if (user.Users.includes(subjectId)) {
+            subject.Subject = user.Note.filter((id) => id !== subjectId);
+            note.Note = note.Note.filter((id) => id !== id);
+          } else {
+            user.Note.push(noteId);
+            note.Note.push(id);
+          }
+    }catch(err){
+        res.status(500).json({message: err.message});
+    }
+}
