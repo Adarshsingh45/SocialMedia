@@ -41,7 +41,11 @@ const UserSchema = new mongoose.Schema({
     subjects:{
         type:Array,
         default:[],
-    }
+    },
+    notes:{
+        type:Array,
+        default:[],
+    },
 });
 
 const User = mongoose.model("User",UserSchema);

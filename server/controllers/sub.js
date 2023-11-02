@@ -28,17 +28,17 @@ export const createSubject = async (req,res)=>{
     }
 };
 
-export const addRemoveNote = async (req,res)=>{
+export const addRemoveSubject = async (req,res)=>{
     try{
-        const {id,subjectId} = req.params
+        const {id,subjectId} = req.params;
         const user = await Users.findById(id);
-        const note = await Subject.findById(noteId);
-        if (user.Users.includes(subjectId)) {
-            subject.Subject = user.Note.filter((id) => id !== subjectId);
-            note.Note = note.Note.filter((id) => id !== id);
+        const subject = await Subject.findById(subjectId);
+        if (user.subjects.includes(subjectId)) {
+            user.subjects = user.subjects.filter((id) => id !== subjectId);
+            subject.subjects = subject.subjects.filter((id) => id !== id);
           } else {
-            user.Note.push(noteId);
-            note.Note.push(id);
+            user.subjects.push(subjectId);
+            note.subjects.push(id);
           }
     }catch(err){
         res.status(500).json({message: err.message});
