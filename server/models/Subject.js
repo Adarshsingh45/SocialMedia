@@ -13,4 +13,4 @@ const SubjectSchema = new mongoose.Schema({
 });
 
 const Subject = mongoose.model('Subject',SubjectSchema);
-export default File;
+export default Subject;

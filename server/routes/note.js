@@ -1,11 +1,11 @@
-import { Express } from "express";
-const router = express.router();
+import express from "express";
+const router = express.Router();
 import {
     getNote,
     createNote,
     updateNote,
     removeNote,
-} from "../controllers/sub.js";
+} from "../controllers/note.js";
 import { verifyToken } from "../middleware/auth.js";
 
 router.get('/subject/:subjectId', verifyToken,getNote);

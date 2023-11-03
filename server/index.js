@@ -8,7 +8,11 @@ import helmet from 'helmet';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { register } from './controllers/auth.js';
-import authRoutes from './routes/auth.js';
+import authRouter from './routes/auth.js';
+import subjectRouter from './routes/subject.js';
+import noteRouter from './routes/note.js';
+import userRouter from './routes/user.js';
+import verifyToken from './middleware/auth.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -35,7 +39,10 @@ const upload = multer({storage:storage});
 
 app.post("/auth/register",upload.single("pdf"),register);
 
-app.use("/auth",authRoutes);
+app.use("/auth",authRouter);
+app.use("/user",userRouter);
+app.use('/subjects',verifyToken, subjectRouter);
+app.use('/notes',verifyToken, noteRouter);
 
 // Mongoose setup
 
