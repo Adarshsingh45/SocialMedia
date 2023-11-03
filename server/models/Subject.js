@@ -1,12 +1,9 @@
 import mongoose from 'mongoose';
 
 const SubjectSchema = new mongoose.Schema({
-    subjectId:{
-        type: String,
-        required: true,
-    },
     userId:{
         type:String,
+        ref:'Users',
         required:true,
     },
     subjectName:{

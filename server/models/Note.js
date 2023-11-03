@@ -1,22 +1,25 @@
 import mongoose from "mongoose";
 
 export const NoteSchema = new mongoose.Schema({
-    noteId:{
-        type:String,
-        required:true,
-    },
     userId:{
         type:String,
+        ref:'Users',
         required:true,
     },
     subjectId:{
         type:String,
+        ref:'Subject',
         required:true,
     },
-    filepath:{
+    noteContent:{
         type:String,
         required:true,
     },
+    Attachments:[{
+        data:Buffer,
+        contentType:String,
+        filename:String,
+    },],
 });
 
 const Note = mongoose.model('Note',NoteSchema);
