@@ -18,6 +18,10 @@ export const authSlice = createSlice({
             state.user=null;
             state.token=null;
         },
+        setSubject:(state,action)=>{
+            state.subject=action.payload.subject;
+            state.subject
+        },
         setSubjects:(state,action)=>{
             if(state.user){
                 state.user.subjects=action.payload.subjects;
