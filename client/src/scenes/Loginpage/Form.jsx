@@ -14,4 +14,12 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLogin } from "state";
 import Dropzone from "react-dropzone";
-import FlexBetween from "components/FlexBetween";
+
+const registerSchema = yup.object().shape({
+  firstName:yup.string().required("required"),
+  lastName:yup.string().required("required"),
+  email:yup.string().email("invalid email").required("required"),
+  Department:yup.string().required("required"),
+  password:yup.string().required("required"),
+  
+})
