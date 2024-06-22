@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`${process.env.FRONTEND_URL}/assets/${image}`}
+        src={`https://social-media-sage-five.vercel.app/assets/${image}`}
       />
     </Box>
   );
