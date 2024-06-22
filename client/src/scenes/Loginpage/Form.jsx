@@ -56,7 +56,6 @@ const Form = () => {
   const isRegister = pageType === "register";
 
   const register = async (values, onSubmitProps) => {
-    // this allows us to send form info with image
     const formData = new FormData();
     for (let value in values) {
       formData.append(value, values[value]);
@@ -231,6 +230,17 @@ const Form = () => {
               sx={{ gridColumn: "span 4" }}
             />
           </Box>
+
+          {isLogin && (
+            <Box mt="1rem">
+              <Typography variant="body2">
+                Test Email: test@gmail.com
+              </Typography>
+              <Typography variant="body2">
+                Test Password: Test123
+              </Typography>
+            </Box>
+          )}
 
           {/* BUTTONS */}
           <Box>
