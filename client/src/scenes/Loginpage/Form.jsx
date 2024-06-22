@@ -63,7 +63,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      `${process.env.local.FRONTEND_URL}/auth/register`,
+      `https://social-media-sage-five.vercel.app/auth/register`,
       {
         method: "POST",
         body: formData,
