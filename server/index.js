@@ -30,7 +30,9 @@ app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors({
-  origin:[process.env.FRONTEND_URL]
+  origin:[process.env.FRONTEND_URL],
+  methods:["GET","POST","OPTIONS","DELETE","PUT"],
+  credentials:true,
 }));
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
