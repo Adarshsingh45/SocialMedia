@@ -30,7 +30,7 @@ app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors({
-  origin:["https://social-media-sage-five.vercel.app"],
+  origin:["https://socialmedia-jx8p.onrender.com/"],
   methods:["GET","POST","OPTIONS","DELETE","PUT"],
   credentials:true,
 }));

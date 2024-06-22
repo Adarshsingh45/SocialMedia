@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `https://social-media-sage-five.vercel.app/users/${_id}/${friendId}`,
+      `https://socialmedia-jx8p.onrender.com//users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {

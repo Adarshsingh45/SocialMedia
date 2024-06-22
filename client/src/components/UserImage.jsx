@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`https://social-media-sage-five.vercel.app/assets/${image}`}
+        src={`https://socialmedia-jx8p.onrender.com//assets/${image}`}
       />
     </Box>
   );
