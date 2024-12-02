@@ -38,7 +38,6 @@ const MyPostWidget = ({ picturePath }) => {
   const medium = palette.neutral.medium;
 
   const handlePost = async () => {
-    alert("Scroll down to view the post");
     const formData = new FormData();
     formData.append("userId", _id);
     formData.append("description", post);
@@ -47,7 +46,7 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picturePath", image.name);
     }
 
-    const response = await fetch(`https://socialmedia-jx8p.onrender.com//posts`, {
+    const response = await fetch(`http://localhost:3001/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
